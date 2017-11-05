@@ -27,6 +27,6 @@
         <property name="hibernate.hbm2ddl.auto">
             update
         </property>
-    <mapping class="com.no_company.hibernate.model.BooksEntity"/>
+    <mapping class="com.no_company.hibernate.model.BookEntity"/>
     </session-factory>
 </hibernate-configuration>

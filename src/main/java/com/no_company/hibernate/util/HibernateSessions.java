@@ -23,4 +23,8 @@ public class HibernateSessions {
         return sessionFactory.openSession();
     }
 
+    public static void closeSessionFactory() throws HibernateException {
+        sessionFactory.close();
+    }
+
 }
