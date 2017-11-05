@@ -1,11 +1,26 @@
-public class HibernateSesions {
+package com.no_company.hibernate.util;
 
-    //FIELDS
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
-    //CONSTRUCTORS
+public class HibernateSessions {
 
-    //METHODS
+    private static final SessionFactory sessionFactory;
 
-    //GETTERS, SETTERS
+    static {
+        try {
+            sessionFactory = new Configuration()
+                    .configure()
+                    .buildSessionFactory();
+        } catch (Throwable e) {
+            throw new ExceptionInInitializerError(e);
+        }
+    }
+
+    public static Session getConfiguredSession() throws HibernateException {
+        return sessionFactory.openSession();
+    }
 
 }
